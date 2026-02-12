@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Dashboard Sextas{% endblock %}
+{% block content %}
+
+<section class="stats">
+  <h2>📊 Estatísticas de Sextas-feiras - {{ ano }}</h2>
+  <div class="painel">
+    <p>Total de sextas: <b>{{ total }}</b></p>
+    <p>Sextas passadas: <b>{{ passadas }}</b></p>
+    <p>Presentes: <b>{{ presentes }}</b></p>
+    <p>Taxa de presença: <b>{{ "%.1f" % ((presentes/passadas)*100 if passadas else 0) }}%</b></p>
+  </div>
+</section>
+
+<section class="calendario">
+  <h3>🗓️ Sextas do Ano</h3>
+  <div class="grid">
+    {% for data, status in dias %}
+      <div class="dia {{ status }}" title="{{ data }}">{{ data.day }}/{{ data.month }}</div>
+    {% endfor %}
+  </div>
+</section>
+
+{% endblock %}

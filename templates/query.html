@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Executar Query SQL</title>
+    <style>
+        body { font-family: Arial; margin: 20px; }
+        textarea { width: 100%; height: 100px; }
+        table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+        th, td { border: 1px solid #ccc; padding: 8px; }
+        th { background-color: #eee; }
+        .erro { color: red; }
+        .sucesso { color: green; }
+    </style>
+</head>
+<body>
+    <h1>Executar Query SQL</h1>
+
+    <form method="POST">
+        <label for="query">Digite sua query:</label><br>
+        <textarea name="query" id="query">{{ query }}</textarea><br>
+        <button type="submit">Executar</button>
+    </form>
+
+    {% if erro %}
+        <p class="erro">Erro: {{ erro }}</p>
+    {% endif %}
+
+    {% if resultado %}
+        {% if colunas %}
+            <h3>Resultado:</h3>
+            <table>
+                <tr>
+                    {% for c in colunas %}
+                        <th>{{ c }}</th>
+                    {% endfor %}
+                </tr>
+                {% for linha in resultado %}
+                    <tr>
+                        {% for valor in linha %}
+                            <td>{{ valor }}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <p class="sucesso">{{ resultado }}</p>
+        {% endif %}
+    {% endif %}
+</body>
+</html>

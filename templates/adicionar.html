@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Adicionar Sexta{% endblock %}
+{% block content %}
+<section class="formulario">
+  <h2>✨ Adicionar Sexta-feira</h2>
+  <form method="POST">
+  <label>Data:</label><br>
+  <input type="date" name="data" id="data" required><br><br>
+
+  <label>Status:</label><br>
+  <select name="status">
+    <option value="ok">Presente (verde)</option>
+    <option value="faltando">Faltando (vermelho)</option>
+  </select><br><br>
+
+  <button type="submit">Adicionar</button>
+</form>
+
+<script>
+  const dataInput = document.getElementById("data");
+
+  dataInput.addEventListener("change", function() {
+    const data = new Date(this.value);
+    const diaSemana = data.getUTCDay(); // 5 = sexta-feira
+
+    if (diaSemana !== 5) {
+      alert("Só é permitido escolher sextas-feiras!");
+      this.value = ""; // limpa o campo
+    }
+  });
+</script>
+
+</section>
+{% endblock %}

@@ -1,0 +1,111 @@
+body {
+  margin: 0;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  color: #333;
+  background-image: url("../images/resenha.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+header {
+  display: flex;
+  align-items: center;      /* alinha verticalmente imagem e texto */
+  justify-content: space-between; /* separa título e nav (ajuste se quiser) */
+  gap: 1rem;
+  width: 100%;
+  padding: 15px 20px;
+  background: linear-gradient(90deg, #ffb6c1, #87cefa);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  box-sizing: border-box;
+}
+
+header img {
+  height: 48px;     /* limita a altura — ajuste conforme quiser */
+  width: auto;      /* preserva proporção */
+  object-fit: contain;
+  display: block;
+  margin-right: 8px;
+}
+
+/* opcional: quando a tela ficar pequena, reduzir imagem */
+@media (max-width: 480px) {
+  header img { height: 36px; }
+  header { padding: 10px; }
+}
+
+
+header h1 {
+  margin: 0;
+  text-shadow: 1px 1px 4px #00000055;
+}
+
+nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  text-shadow: 0 0 6px #fff;
+}
+
+main {
+  background-color: rgba(255, 255, 255, 0.85);
+  margin: 30px auto;
+  width: 90%;
+  max-width: 900px;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(255,150,200,0.3);
+  flex: 1;
+}
+
+.stats .painel {
+  background: #ffe3f5;
+  border-radius: 15px;
+  padding: 10px;
+  box-shadow: 0 0 10px #ffcce5;
+}
+
+.calendario .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 70px);
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.dia {
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 0 6px rgba(0,0,0,0.1);
+}
+
+.dia:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(255, 182, 193, 0.8);
+}
+
+.verde { background-color: #91e891; }
+.vermelho { background-color: #ff9999; }
+.futuro { background-color: #b3b3ff; }
+
+footer {
+  text-align: center;
+  color: white;
+  background: linear-gradient(90deg, #87cefa, #ffb6c1);
+  padding: 10px 0;
+}
+
+footer img {
+  width: 150px;
+  display: block;
+  margin: 0 auto;
+}

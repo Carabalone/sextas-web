@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}Dashboard Sextas{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <header>
+    <img src="{{ url_for('static', filename='images/uma-musume-mambo.gif') }}" alt="">
+    <h1>Sextas dos crias Dashboard</h1>
+    <nav>
+      <a href="{{ url_for('index') }}">🏠 Início</a>
+      <a href="{{ url_for('adicionar') }}">➕ Adicionar Sexta</a>
+    </nav>
+  </header>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer>
+    <img src="{{ url_for('static', filename='images/uma-musume-agnes-tachyon.gif') }}" alt="">
+    <p>Feito com ChatGPT como um exercicio para eu aprender flask kk</p>
+  </footer>
+</body>
+</html>
